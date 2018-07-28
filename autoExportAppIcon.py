@@ -16,7 +16,7 @@ except:
       print ('\033[31m' + 'Image安装失败，请手动在终端执行：\'python -m pip install Image\'重新安装.' + '\033[0m')
       quit()
 
-outPutPath = os.path.expanduser('~') + '/Desktop/AppIcon/'
+outPutPath = os.path.expanduser('~') + '/Desktop/AppIcon.appiconset/'
 
 if not os.path.exists(outPutPath):
     os.mkdir(outPutPath)
@@ -71,6 +71,10 @@ img13 = originImg.resize((167,167), Image.ANTIALIAS)
 img11.save(outPutPath + 'appIcon76x76.png',"png")
 img12.save(outPutPath + 'appIcon76x76@2x.png',"png")
 img13.save(outPutPath + 'appIcon83.5x83.5@2x.png',"png")
+
+# appstore
+img14 = originImg.resize((1024,1024), Image.ANTIALIAS)
+img14.save(outPutPath + 'appstore1024x1024.png',"png")
 
 # 创建Contents.json文件
 
@@ -184,6 +188,12 @@ content = '''
       "idiom" : "ipad",
       "filename" : "appIcon83.5x83.5@2x.png",
       "scale" : "2x"
+    },
+     {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "appstore1024x1024.png",
+      "scale" : "1x"
     }
   ],
   "info" : {
